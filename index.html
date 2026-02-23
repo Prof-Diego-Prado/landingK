@@ -44,47 +44,52 @@
 </head>
 <body class="bg-brand-dark text-white font-sans antialiased overflow-x-hidden">
 
-    <!-- HERO SECTION -->
-    <section class="relative min-h-screen flex items-center pt-20 pb-12 lg:pt-0">
-        <!-- Elemento de Fundo -->
-        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <div class="absolute -top-[20%] -right-[10%] w-[70vw] h-[70vw] rounded-full bg-brand-red opacity-10 blur-[120px]"></div>
+    <!-- HERO SECTION (IMAGEM INTEGRADA NO FUNDO) -->
+    <section class="relative min-h-screen flex items-center pt-20 pb-12 lg:pt-0 overflow-hidden bg-brand-dark">
+        
+        <!-- IMAGEM NO FUNDO (Atrás dos textos e botões) -->
+        <!-- Ajuste de alinhamento: items-start para focar no topo em mobile -->
+        <div class="absolute inset-0 z-0 flex justify-end items-start lg:items-center pointer-events-none">
+            <!-- Este gradiente escurece a lateral esquerda para garantir que o texto fique 100% legível -->
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent z-10"></div>
+            
+            <!-- A máscara (mask-image) faz o fundo branco da foto "esfumar" e sumir nas bordas -->
+            <!-- Ajuste de objeto: object-right-top para focar no rosto -->
+            <img src="https://lh3.googleusercontent.com/d/1_xjHkUC4zzGLYbBB5CQm6Mskl970Ue5S" 
+                 alt="Erika Daiany" 
+                 class="w-full lg:w-[65%] h-full object-cover lg:object-contain object-right-top opacity-90 relative z-0"
+                 style="-webkit-mask-image: radial-gradient(ellipse at 60% 50%, black 35%, transparent 75%); mask-image: radial-gradient(ellipse at 60% 50%, black 35%, transparent 75%);">
         </div>
 
+        <!-- Efeito de Brilho Vermelho no fundo -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-[10%] right-[10%] w-[60vw] h-[60vw] rounded-full bg-brand-red opacity-15 blur-[120px]"></div>
+        </div>
+
+        <!-- CONTEÚDO PRINCIPAL (Texto e Botões por cima da imagem) -->
         <div class="container mx-auto px-6 lg:px-12 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div class="w-full lg:w-2/3 flex flex-col justify-center reveal-up">
                 
-                <!-- Texto Hero -->
-                <div class="w-full lg:w-1/2 flex flex-col justify-center reveal-up">
-                    <p class="text-brand-red font-bold tracking-[0.2em] uppercase text-sm mb-4">Pré-Venda Exclusiva</p>
-                    <h1 class="text-5xl lg:text-7xl font-black leading-tight mb-6">
-                        A Ciência da <br>
-                        <span class="text-gradient">Cor Perfeita.</span>
-                    </h1>
-                    <p class="text-lg text-gray-400 mb-8 leading-relaxed font-light max-w-lg">
-                        Descubra o <strong>Método K</strong>. Não é apenas uma apostila, é um ecossistema vivo de aprendizado. Eleve seu nível na colorimetria capilar e junte-se à revolução.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#oferta" class="bg-brand-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 text-center shadow-[0_0_20px_rgba(230,43,30,0.4)]">
-                            Garantir 20% OFF
-                        </a>
-                        <a href="#sobre" class="bg-transparent border border-gray-600 hover:border-white text-white font-bold py-4 px-8 rounded-full transition-all text-center">
-                            Conhecer o Movimento
-                        </a>
-                    </div>
+                <p class="text-brand-red font-bold tracking-[0.2em] uppercase text-sm mb-4 drop-shadow-lg">Ebook em Pré-Venda Exclusiva</p>
+                
+                <h1 class="text-5xl lg:text-7xl font-black leading-tight mb-6 drop-shadow-2xl">
+                    A Ciência da <br>
+                    <span class="text-gradient">Cor Perfeita.</span>
+                </h1>
+                
+                <p class="text-lg text-gray-300 mb-8 leading-relaxed font-medium max-w-lg drop-shadow-xl bg-black/20 p-2 rounded-lg backdrop-blur-[2px]">
+                    Garanta o Ebook <strong>Método K</strong> agora. Mais do que um manual de colorimetria capilar, ele é o seu passe VIP com desconto garantido para a fundação da nossa futura comunidade.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#oferta" class="bg-brand-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 text-center shadow-[0_0_20px_rgba(230,43,30,0.4)]">
+                        Garantir Ebook com 20% OFF
+                    </a>
+                    <a href="#sobre" class="bg-brand-gray/50 backdrop-blur-sm border border-gray-500 hover:border-white text-white font-bold py-4 px-8 rounded-full transition-all text-center shadow-lg">
+                        Conhecer o Movimento
+                    </a>
                 </div>
-
-                <!-- Imagem Hero (Material do Curso) -->
-                <div class="w-full lg:w-1/2 reveal-up flex justify-center" style="animation-delay: 0.3s;">
-                    <div class="relative w-full max-w-lg group">
-                        <!-- Brilho de Fundo -->
-                        <div class="absolute inset-0 bg-brand-red rounded-full blur-[100px] opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
-                        <!-- Imagem Drive Integrada -->
-                        <img src="https://drive.google.com/uc?export=view&id=1bLsdFSw-VZeArrcEAiS3jWmaS53BbfoI" alt="Material Método K" class="relative z-10 w-full h-auto object-contain transform group-hover:scale-105 transition-transform duration-700" style="mask-image: linear-gradient(to bottom, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);">
-                    </div>
-                </div>
-
+                
             </div>
         </div>
     </section>
@@ -106,26 +111,26 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 
                 <div>
-                    <h2 class="text-4xl font-black mb-6">Um conteúdo que <span class="text-brand-red">evolui com você.</span></h2>
+                    <h2 class="text-4xl font-black mb-6">O Ebook é a chave para <span class="text-brand-red">algo maior.</span></h2>
                     <p class="text-gray-300 text-lg mb-6 leading-relaxed">
-                        O Método K não é um ebook estático que você lê e esquece na gaveta. Estamos construindo uma plataforma dinâmica de aprendizado.
+                        O Ebook Método K é o seu alicerce indispensável. Ao dominar o material teórico agora, você se prepara para o próximo grande passo do nosso movimento.
                     </p>
                     <p class="text-gray-300 text-lg mb-8 leading-relaxed">
-                        Ao adquirir na <strong class="text-white">Pré-Venda</strong>, você se torna membro fundador. O material base já está disponível, e <strong>novos capítulos, vídeos, atualizações de técnicas e ferramentas de diagnóstico serão inseridos constantemente.</strong>
+                        Adquirindo o Ebook na <strong class="text-white">Pré-Venda</strong>, além de ter o material definitivo de colorimetria, você ganha o status de membro fundador. Isso significa um <strong>desconto exclusivo e vitalício</strong> para entrar na Comunidade Método K, que será lançada em breve.
                     </p>
                     
                     <ul class="space-y-4">
                         <li class="flex items-start">
                             <svg class="w-6 h-6 text-brand-red mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            <span class="text-gray-300">Acesso vitalício às atualizações da apostila.</span>
+                            <span class="text-gray-300"><strong>Acesso Imediato:</strong> O Ebook completo do Método K.</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-6 h-6 text-brand-red mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            <span class="text-gray-300">Comunidade exclusiva para networking e dúvidas.</span>
+                            <span class="text-gray-300"><strong>Vantagem VIP:</strong> Desconto especial garantido para a futura Comunidade.</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-6 h-6 text-brand-red mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            <span class="text-gray-300">Construção colaborativa: suas dúvidas viram novos capítulos.</span>
+                            <span class="text-gray-300"><strong>Ecossistema Vivo:</strong> A Comunidade trará cursos, dicas e materiais práticos exclusivos.</span>
                         </li>
                     </ul>
                 </div>
@@ -134,22 +139,22 @@
                 <div class="relative mt-8 md:mt-0">
                     <div class="absolute inset-0 bg-brand-red rounded-2xl transform rotate-3 opacity-20"></div>
                     <div class="bg-brand-gray/90 backdrop-blur-md p-10 rounded-2xl relative border border-gray-800 shadow-xl z-10">
-                        <h3 class="text-2xl font-bold mb-4">Cronograma de Expansão</h3>
+                        <h3 class="text-2xl font-bold mb-4">Cronograma do Movimento</h3>
                         <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-600 before:to-transparent">
                             <!-- Item 1 -->
                             <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                                 <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-brand-gray text-brand-red font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_10px_rgba(230,43,30,0.5)]">1</div>
                                 <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded border border-gray-700 bg-brand-dark">
                                     <div class="font-bold text-white">Fase Atual</div>
-                                    <div class="text-sm text-gray-400">Pré-Venda: Lançamento do módulo 1 do material.</div>
+                                    <div class="text-sm text-gray-400">Pré-venda: Lançamento oficial do Ebook "Método K". Garanta sua fundação teórica.</div>
                                 </div>
                             </div>
                             <!-- Item 2 -->
                             <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                                 <div class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-600 bg-brand-gray text-gray-400 font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">2</div>
                                 <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded border border-gray-800 bg-brand-gray">
-                                    <div class="font-bold text-gray-300">Próxima Fase</div>
-                                    <div class="text-sm text-gray-500">Lançamento da comunidade "Método K" um local virtual de troca de ideias, conteúdos e materiais exclusivos.</div>
+                                    <div class="font-bold text-gray-300">O Lançamento (em 45 dias)</div>
+                                    <div class="text-sm text-gray-500">Abertura da Comunidade "Método K", um local virtual com cursos, networking e conteúdos. (Desconto exclusivo para leitores).</div>
                                 </div>
                             </div>
                             <!-- Item 3 -->
@@ -157,7 +162,7 @@
                                 <div class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-600 bg-brand-gray text-gray-400 font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">3</div>
                                 <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded border border-gray-800 bg-brand-gray">
                                     <div class="font-bold text-gray-300">Futuro Contínuo</div>
-                                    <div class="text-sm text-gray-500">Masterclass Exclusivas para os membros da comunidade.</div>
+                                    <div class="text-sm text-gray-500">Masterclasses exclusivas, novas ferramentas e materiais bônus contínuos para a comunidade.</div>
                                 </div>
                             </div>
                         </div>
@@ -169,31 +174,6 @@
     </section>
 
     <!-- SOBRE A AUTORA -->
-    <section class="py-24 bg-brand-gray border-y border-gray-800">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="flex flex-col items-center text-center max-w-4xl mx-auto gap-8">
-                
-                <!-- Texto Autora -->
-                <div class="w-full">
-                    <h2 class="text-4xl font-black mb-2">Quem é <span class="text-brand-red">Erika Daiany?</span></h2>
-                    <p class="text-gray-400 mb-6 font-bold uppercase tracking-widest text-sm">Criadora do Método K</p>
-                    
-                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
-                        Muito além de uma profissional da beleza, Erika é uma educadora apaixonada pela transformação. Com sua visão analítica e artística, ela decodificou a colorimetria capilar transformando regras complexas em um método claro e aplicável.
-                    </p>
-                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
-                        Sua voz no mercado levanta uma bandeira essencial: <em>a colorimetria é matemática, é ciência, e está ao alcance de quem deseja estudá-la a fundo.</em> Através de seus conteúdos online e mentorias, Erika tem liderado uma nova geração de profissionais que não apenas aplicam tintura, mas que compreendem a química por trás de cada reflexo.
-                    </p>
-                    
-                    <a href="https://www.instagram.com/erikadaianyoficial" target="_blank" class="inline-flex items-center justify-center text-white hover:text-brand-red transition-colors font-bold">
-                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        Siga @erikadaianyoficial no Instagram
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- OFERTA & COUNTDOWN -->
     <section id="oferta" class="py-24 relative overflow-hidden bg-brand-dark">
         <!-- Partículas de fundo (Design visual) -->
@@ -201,8 +181,8 @@
 
         <div class="container mx-auto px-6 text-center z-10 relative">
             
-            <h2 class="text-3xl md:text-5xl font-black mb-6">A Revolução Começa em:</h2>
-            <p class="text-gray-400 text-lg mb-10">Lançamento oficial e fechamento das vagas de pré-venda.</p>
+            <h2 class="text-3xl md:text-5xl font-black mb-6">A Comunidade Nasce em:</h2>
+            <p class="text-gray-400 text-lg mb-10">Tempo restante para garantir seu Ebook e resgatar o passe VIP com desconto.</p>
 
             <!-- Contador -->
             <div id="countdown" class="flex flex-wrap justify-center gap-4 mb-12">
@@ -228,21 +208,28 @@
             </div>
 
             <!-- Caixa de Oferta -->
-            <div class="max-w-xl mx-auto bg-brand-gray border border-gray-700 rounded-3xl p-8 md:p-12 shadow-2xl relative">
-                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-brand-red text-white text-xs font-bold uppercase tracking-widest py-2 px-6 rounded-full shadow-lg">
+            <div class="max-w-xl mx-auto bg-brand-gray border border-gray-700 rounded-3xl p-8 md:p-12 shadow-2xl relative mt-12">
+                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-brand-red text-white text-xs font-bold uppercase tracking-widest py-2 px-6 rounded-full shadow-lg whitespace-nowrap">
                     Lote de Pré-venda
                 </div>
                 
-                <h3 class="text-2xl font-bold mb-4">Acesso Antecipado + Comunidade</h3>
-                <p class="text-gray-400 mb-8">Ao comprar hoje, você garante seu acesso com <strong class="text-white">20% de Desconto</strong> e participa da fundação da nossa nova comunidade de coloristas.</p>
+                <h3 class="text-2xl font-bold mb-2">Ebook + Desconto na Comunidade</h3>
                 
-                <div class="bg-black border border-gray-800 rounded-xl p-4 mb-8 inline-block">
+                <!-- Destaque de Preço Ancorado -->
+                <div class="flex items-center justify-center gap-3 my-6">
+                    <span class="text-gray-500 line-through text-2xl font-light">R$ 74,90</span>
+                    <span class="text-brand-red font-black text-5xl tracking-tighter">R$ 59,92</span>
+                </div>
+
+                <p class="text-gray-400 mb-8 text-sm">O Ebook oficial custa <strong>R$ 74,90</strong>, mas ao garantir agora com <strong class="text-white">20% de Desconto</strong>, você domina a teoria e destrava a sua vaga especial para a futura Comunidade de cursos e mentorias.</p>
+                
+                <div class="bg-black border border-gray-800 rounded-xl p-4 mb-8 inline-block w-full max-w-xs">
                     <span class="text-gray-500 text-sm block mb-1">Use o cupom no checkout:</span>
                     <span class="font-mono text-2xl font-bold text-brand-red tracking-widest border-b-2 border-dashed border-brand-red pb-1">PREVENDA</span>
                 </div>
 
                 <a href="https://pay.kiwify.com.br/CfKBbIt" target="_blank" class="block w-full bg-brand-red hover:bg-red-700 text-white font-black text-lg py-5 px-8 rounded-full transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(230,43,30,0.3)]">
-                    Quero Garantir Minha Vaga
+                    Comprar Ebook Agora
                 </a>
 
                 <!-- QR Code Section -->
@@ -278,15 +265,8 @@
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Configuração da data final (22 de Março do próximo ano, ou ano atual se ainda não passou)
-        const now = new Date();
-        let targetYear = now.getFullYear();
-        if (now.getMonth() > 2 || (now.getMonth() === 2 && now.getDate() > 22)) {
-            targetYear += 1; // Se já passou de 22/03 neste ano, aponta para o próximo
-        }
-        
-        // Data alvo: 22 de Março às 00:00:00
-        const countDownDate = new Date(`March 22, ${targetYear} 00:00:00`).getTime();
+        // Data alvo: 45 dias a partir da criação da página (8 de Abril de 2026)
+        const countDownDate = new Date("April 8, 2026 00:00:00").getTime();
 
         const updateCountdown = setInterval(function() {
             const nowTime = new Date().getTime();
